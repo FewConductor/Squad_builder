@@ -1,0 +1,760 @@
+body {
+    margin: 0;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e8e8e8;
+    font-family: "Poppins", sans-serif;
+    background: rgb(2, 29, 50);
+    background: linear-gradient(146deg, rgba(2, 29, 50, 1) 10%, rgba(0, 48, 73, 1) 71%, rgba(1, 84, 112, 1) 95%);
+}
+
+/* ! Main header */
+
+h1 {
+    margin: 20px;
+    position: relative;
+    left: 28px;
+    width: 300px;
+    text-align: center;
+    color: #f8f8f8;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+}
+
+/* ! Formations */
+
+aside {
+    flex-grow: 1;
+    background-color: #a1c181;
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
+}
+
+h2 {
+    margin: 15px;
+    text-align: center;
+}
+
+.forms {
+    min-width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+aside .form {
+    width: 100%;
+    min-height: 30px;
+    background-color: #e8e8e8;
+    color: #000814;
+    border: 2px #000814 solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px;
+    border-radius: 4px;
+    padding: 3px;
+}
+
+aside .form p {
+    margin: 0;
+    text-align: center;
+}
+
+aside .form:hover {
+    background-color: #015470;
+    color: #f8f8f8;
+    border: 2px #f8f8f8 solid;
+}
+
+aside .selected {
+    background-color: #000814;
+    color: #f8f8f8;
+    border: 2px solid #f8f8f8;
+}
+
+/* ! Pitch graphic */
+
+.pitcharea {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pitch {
+    height: 65vh;
+    aspect-ratio: 1.3/1;
+    background-color: #a1c181;
+    margin: 10px;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    bottom: 3vh;
+}
+
+.subs {
+    margin: 0;
+    color: #f8f8f8;
+    position: absolute;
+    bottom: 5%;
+    border-radius: 5px;
+    padding: 4px 4px;
+}
+
+.subs:hover {
+    box-shadow: 0 0 10px #000814;
+}
+
+.infield {
+    height: 92%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ! Player name input */
+
+.input {
+    flex-grow: 1;
+    background-color: #a1c181;
+    padding: 20px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+}
+
+.boxes {
+    width: calc(100% - 20px);
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
+label {
+    text-align: center;
+}
+
+#PlayerNumber,
+#PlayerName {
+    width: 75%;
+    text-align: center;
+}
+
+.btn {
+    margin: 2px;
+    border-radius: 3px;
+    background-color: #f8f8f8;
+    color: #000814;
+}
+
+.btn:hover {
+    background-color: #219ebc;
+    opacity: 90%;
+    box-shadow: 0 0 5px #000814;
+}
+
+/* ! Back to the pitch */
+
+/* ? Pitch markings */
+
+.lines {
+    position: absolute;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border: 2px #f8f8f8 solid;
+    border-radius: 4px 4px 0 0;
+}
+
+svg {
+    position: absolute;
+    top: 1px;
+}
+
+.goal {
+    height: 13px;
+    width: 40px;
+    position: absolute;
+    top: calc(100% - 2px);
+    left: calc(50% - 20px - 2px);
+    border: 2px #f8f8f8 solid;
+    border-radius: 0 0 4px 4px;
+}
+
+.tf {
+    height: calc(50% - 4px);
+    width: calc(100% - 4px);
+    position: absolute;
+    border: 2px #f8f8f8 solid;
+    border-radius: 4px 4px 0 0;
+}
+
+/* ? Players */
+
+.player {
+    height: 40px;
+    width: 40px;
+    background-color: orange;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000814;
+    transition: 0.3s;
+}
+
+.player:hover {
+    background-color: #0077b6;
+}
+
+.p1 {
+    top: 87%;
+}
+
+/* ! Media queries */
+
+@media (max-width: 1000px) {
+
+    /* body {
+        background: red;
+    } */
+
+    body {
+        padding: 15px;
+        padding-top: 0;
+        height: calc(100vh - 15px)
+    }
+
+    h1 {
+        margin: 10px;
+        left: 0;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-auto-rows: min-content;
+        row-gap: 20px;
+    }
+
+    .pitch {
+        height: 62vh;
+    }
+
+    aside {
+        grid-column: span 2;
+    }
+
+    aside h2 {
+        margin: 0;
+    }
+
+    aside .forms {
+        flex-direction: row;
+        width: 70%;
+        justify-content: space-around;
+    }
+
+    aside .form {
+        max-width: 120px;
+    }
+
+    .pitcharea {
+        grid-column: span 1;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .pitch {
+        bottom: none;
+        top: 0;
+        margin-top: 0;
+        /* flex-grow: 1; */
+    }
+
+    .subs {
+        position: relative;
+        text-wrap: normal;
+        bottom: none;
+        margin-right: 10px;
+        text-align: center;
+        width: 100px;
+    }
+
+    .input {
+        grid-column: span 1;
+    }
+
+}
+
+@media (max-width: 880px) {
+
+    /* body {
+        background: green;
+    } */
+
+    body {
+        height: auto;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    aside h2 {
+        font-size: 1.2rem;
+    }
+
+    aside {
+        padding: 5px;
+    }
+
+    aside .form {
+        max-width: 100px;
+    }
+
+    aside .form p {
+        font-size: 0.9rem;
+    }
+
+    .subs {
+        margin: 0;
+    }
+
+    .pitch {
+        margin-left: 0;
+    }
+
+    .input {
+        padding: 5px;
+    }
+
+    .boxes {
+        padding: 0;
+        height: 10vh;
+        flex-direction: row;
+        font-size: 0.9rem;
+    }
+
+    #PlayerNumber,
+    #PlayerName {
+        width: 20%;
+    }
+
+    .player .name {
+        font-size: 0.8rem;
+    }
+
+}
+
+@media (max-width: 645px) {
+
+    .pitcharea {
+        flex-direction: column;
+    }
+
+    .pitch {
+        margin: 0;
+    }
+
+    .subs {
+        width: auto;
+        margin: 2px;
+    }
+
+    .input .boxes {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #PlayerNumber,
+    #PlayerName {
+        width: 30%;
+    }
+
+}
+
+@media (max-width: 525px) {
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    .container {
+        gap: 0;
+    }
+
+    aside {
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+
+    aside h2 {
+        font-size: 1rem;
+    }
+
+    aside .form p {
+        font-size: 0.7rem;
+    }
+
+    aside .forms {
+        width: 100%;
+        justify-content: space-evenly
+    }
+
+    aside .form {
+        margin: 0 5px;
+        min-height: 20px;
+        max-width: 80px;
+    }
+
+    .pitch {
+        height: auto;
+        width: 100%;
+    }
+
+    .player {
+        height: 30px;
+        width: 30px;
+        font-size: 0.8rem;
+    }
+
+    .player .name {
+        font-size: 0.7rem;
+    }
+
+    .subs {
+        font-size: 0.9rem;
+    }
+
+    .input .boxes {
+        font-size: 0.8rem;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    svg circle {
+        r: 100;
+    }
+}
+
+@media (max-width: 360px) {
+
+    body {
+        padding: 10px;
+        padding-top: 0;
+    }
+
+    .player {
+        height: 25px;
+        width: 25px;
+        font-size: 0.7rem;
+    }
+
+    .subs {
+        font-size: 0.8rem;
+    }
+
+    svg circle {
+        r: 80;
+    }
+
+}
+
+@media (max-width: 300px) {
+    svg circle {
+        r: 65;
+    }
+
+    aside .forms {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    aside .form {
+        margin: 5px;
+        justify-self: center;
+    }
+
+    aside .form:last-child {
+        grid-column: span 2;
+    }
+
+}
+
+@media (max-width: 255px) {
+
+    body {
+        padding: 5px;
+        padding-top: 0;
+    }
+
+    svg circle {
+        r: 55;
+    }
+
+    .player {
+        height: 20px;
+        width: 20px;
+        font-size: 0.6rem;
+    }
+
+    .player .name {
+        font-size: 0.6rem;
+    }
+
+    .subs {
+        font-size: 0.7rem;
+    }
+}
+
+/* ? 2-3-2-3 formation */
+
+.f2323 {
+    display: none;
+}
+
+.f2323.p2 {
+    top: 50%;
+    left: 5%;
+}
+
+.f2323.p3 {
+    top: 68%;
+    left: 30%;
+}
+
+.f2323.p4 {
+    top: 68%;
+    right: 30%;
+}
+
+.f2323.p5 {
+    top: 50%;
+    right: 5%;
+}
+
+.f2323.p6 {
+    top: 45%;
+}
+
+.f2323.p7 {
+    top: 25%;
+    left: 25%;
+}
+
+.f2323.p8 {
+    top: 25%;
+    right: 25%;
+}
+
+.f2323.p9 {
+    top: 3%;
+    left: 5%;
+}
+
+.f2323.p10 {
+    top: 1%;
+}
+
+.f2323.p11 {
+    top: 3%;
+    right: 5%;
+}
+
+/* ? 4-4-2 formation */
+
+.f442 {
+    display: none;
+}
+
+.f442.p2 {
+    top: 55%;
+    left: 5%;
+}
+
+.f442.p3 {
+    top: 68%;
+    left: 30%;
+}
+
+.f442.p4 {
+    top: 68%;
+    right: 30%;
+}
+
+.f442.p5 {
+    top: 55%;
+    right: 5%;
+}
+
+.f442.p6 {
+    top: 25%;
+    left: 5%;
+}
+
+.f442.p7 {
+    top: 35%;
+    left: 35%;
+}
+
+.f442.p8 {
+    top: 35%;
+    right: 35%;
+}
+
+.f442.p9 {
+    top: 25%;
+    right: 5%;
+}
+
+.f442.p10 {
+    top: 3%;
+    left: 30%;
+}
+
+.f442.p11 {
+    top: 3%;
+    right: 30%;
+}
+
+/* ? 3-1-2-1-3 formation */
+
+.f31213 {
+    display: none;
+}
+
+.f31213.p2 {
+    top: 55%;
+    left: 10%;
+}
+
+.f31213.p3 {
+    top: 71%;
+}
+
+.f31213.p4 {
+    top: 55%;
+    right: 10%;
+}
+
+.f31213.p5 {
+    top: 51%;
+}
+
+.f31213.p6 {
+    top: 35%;
+    left: 30%;
+}
+
+.f31213.p7 {
+    top: 35%;
+    right: 30%;
+}
+
+.f31213.p8 {
+    top: 22%;
+}
+
+.f31213.p9 {
+    top: 5%;
+    left: 10%;
+}
+
+.f31213.p10 {
+    top: 1%;
+}
+
+.f31213.p11 {
+    top: 5%;
+    right: 10%;
+}
+
+/* ? Toggled classes */
+
+.show {
+    display: flex;
+}
+
+/* ? Player names */
+
+.player .name {
+    position: absolute;
+    top: 55%;
+    /* top: 100%; */
+    text-align: center;
+}
+
+@media (max-width: 880px) {
+    .player .name {
+        top: 65%;
+    }
+}
+
+@media (max-width: 360px) {
+    .player .name {
+        top: 50%;
+    }
+}
+
+/* .p9 .nameBox {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    position: relative;
+}
+
+.p9 .nameBox h5 {
+    margin: 0;
+    color: darkred;
+    position: absolute;
+    right: -10px;
+    top: 3px;
+    opacity: 0%;
+}
+
+.p9 .nameBox p {
+    margin: 0;
+}
+
+.p9 .nameBox:hover h5 {
+    opacity: 100%;
+    transition: 0.5s;
+}
+
+.p9 .nameBox h5:hover {
+    box-shadow: 0 0 5px #000814;
+} */
