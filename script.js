@@ -21,7 +21,8 @@ let form31213 = document.querySelector('.form31213')
 let players = document.querySelectorAll('.player')
 
 // ? Loading the page
-let currentFormation = localStorage.getItem('currentFormation');
+if (localStorage.getItem('currentFormation') != null) {
+let currentFormation = localStorage.getItem('currentFormation');}
 
 let functions = {
     fm2323: function () {
